@@ -116,8 +116,9 @@ class CreateModel extends Command
                     $route_request_file = str_replace("// End Controllers Imports", "use App\Http\Controllers\\{$model_name}Controller;\n// End Controllers Imports", $route_request_file);
                 }
                 if(!Str::contains($route_request_file, "Route::resource('$model_name_plural_lower', {$model_name}Controller::class);")){
-                    $route_request_file = str_replace("// End Models Routes", "// $model_name_plural\n".Str::repeat(" ", 4 * 3)."// End Models Routes", $route_request_file);
-                    $route_request_file = str_replace("// End Models Routes", "Route::resource('$model_name_plural_lower', {$model_name}Controller::class);\n".Str::repeat(" ", 4 * 3)."\n".Str::repeat(" ", 4 * 3)."// End Models Routes", $route_request_file);
+                    $tabs = Str::repeat(" ", 4 * 3);
+                    $route_request_file = str_replace("// End Models Routes", "// $model_name_plural\n".$tabs."// End Models Routes", $route_request_file);
+                    $route_request_file = str_replace("// End Models Routes", "Route::resource('$model_name_plural_lower', {$model_name}Controller::class);\n".$tabs."\n".$tabs."// End Models Routes", $route_request_file);
                 }
                 
                 file_put_contents(App::basePath("routes/requests.php"), $route_request_file);
@@ -133,7 +134,8 @@ class CreateModel extends Command
             
             if(Str::contains($route_web_file, "// End Models Routes")){
                 if(!Str::contains($route_web_file, "Route::view('$model_name_plural_lower', 'backoffice.$model_name_plural_lower'")){
-                    $route_web_file = str_replace("// End Models Routes", "Route::view('$model_name_plural_lower', 'backoffice.$model_name_plural_lower', headers: ['menu' => true])->name('backoffice.$model_name_plural_lower');\n".Str::repeat(" ", 4 * 2)."// End Models Routes", $route_web_file);
+                    $tabs = Str::repeat(" ", 4 * 3);
+                    $route_web_file = str_replace("// End Models Routes", "Route::view('$model_name_plural_lower', 'backoffice.$model_name_plural_lower', headers: ['menu' => true])->name('backoffice.$model_name_plural_lower');\n".$tabs."// End Models Routes", $route_web_file);
                 }
                 
                 file_put_contents(App::basePath("routes/web.php"), $route_web_file);
