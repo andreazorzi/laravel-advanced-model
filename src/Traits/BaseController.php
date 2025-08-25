@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\View;
 
 trait BaseController
 {
-    private static function modal($modal_name, $data = []){
+    private function modal($modal_name, $data = []){
         return View::make("components.backoffice.modals.$modal_name", $data);
     }
     
-    private static function modal_data($model, $data = []){
-        return self::modal("$model-data", $data);
+    private function modal_data($model, $data = []){
+        return $this->modal("$model-data", $data);
     }
 }
