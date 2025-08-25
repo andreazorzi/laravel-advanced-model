@@ -135,6 +135,8 @@ public function store(StoreUserRequest $request)
         "status" => "success", // success, danger, info, warning
         "message" => "User created successfully!",
         "duration" => 3000, // milliseconds (-1 for no auto-close)
+        "gravity" => 'bottom', // optional
+        "position" => 'center', // optional
         "beforeshow" => 'console.log("Alert about to show");', // optional
         "callback" => 'refreshTable();', // optional: run after alert dismissed
     ]);

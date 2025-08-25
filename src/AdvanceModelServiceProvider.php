@@ -24,12 +24,12 @@ class AdvanceModelServiceProvider extends PackageServiceProvider
             /*->hasViews()*/;
     }
     
-    // public function boot()
-    // {
-    //     parent::boot();
+    public function boot()
+    {
+        parent::boot();
 
-    //     // Load package views
-    //     $this->loadViewsFrom(__DIR__.'/../resources/views', 'advance-model');
-    // }
+        // Load package views
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-advance-model');
+    }
 
 }

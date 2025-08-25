@@ -15,30 +15,29 @@ trait AlertResponse
             "duration" => $data["duration"] ?? null
         ];
         
-        return View::make("components.alert", $alert);
+        return View::make("laravel-advance-model::components.alert", $alert);
     }
     
-    public function sweet_alert($data){
+    public function sweetAlert($data){
         $alert = [
             "status" => $data["status"] ?? "info",
             "title" => $data["title"] ?? "",
             "message" => $data["message"] ?? "",
-            "duration" => $data["duration"] ?? null,
             "confirm" => [
-                "text" => $data["confirm"]["text"] ?? "OK",
-                "color" => $data["confirm"]["color"] ?? "#0A5399",
-                "disable" => $data["confirm"]["disable"] ?? false
+                "text" => $data["confirm"]["text"] ?? null,
+                "color" => $data["confirm"]["color"] ?? null,
+                "disable" => $data["confirm"]["disable"] ?? null,
             ],
             "cancel" => [
-                "text" => $data["confirm"]["text"] ?? "Cancel",
-                "color" => $data["confirm"]["color"] ?? "#DC3545",
-                "disable" => $data["confirm"]["disable"] ?? true
+                "text" => $data["cancel"]["text"] ?? null,
+                "color" => $data["cancel"]["color"] ?? null,
+                "disable" => $data["cancel"]["disable"] ?? null,
             ],
             "beforeshow" => $data["beforeshow"] ?? null,
             "onsuccess" => $data["onsuccess"] ?? null,
             "oncancel" => $data["oncancel"] ?? null
         ];
         
-        return View::make("components.sweet-alert", $alert);
+        return View::make("laravel-advance-model::components.sweetalert", $alert);
     }
 }
