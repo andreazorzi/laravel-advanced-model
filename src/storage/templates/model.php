@@ -51,6 +51,8 @@ class :MODEL_NAME: extends Model
     
     /** Relations **/
     
+    /** Scopes **/
+    
     /** Methods **/
     
     /** Update, delete and validation functions **/
