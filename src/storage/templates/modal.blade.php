@@ -7,7 +7,7 @@
 </div>
 <div class="modal-body">
     <div class="row g-3">
-        <div class="col-md-6 order-5">
+        <div class="col-md-6 order-3">
             <label>Nome</label>
             <input type="text" class="form-control" id=":MODEL_NAME_LOWER:-name" name="name" value="{{$:MODEL_NAME_VARIABLE:->name ?? ""}}">
         </div>
