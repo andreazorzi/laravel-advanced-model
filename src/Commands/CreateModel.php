@@ -34,6 +34,7 @@ class CreateModel extends Command
             "controller.php" => ["path" => App::path("Http/Controllers/"), "name" => ":MODEL_NAME:Controller.php", "type" => 1],
             "page.blade.php" => ["path" => App::resourcePath("/views/backoffice/"), "name" => ":MODEL_NAME_PLURAL_LOWER:.blade.php", "type" => 2],
             "modal.blade.php" => ["path" => App::resourcePath("/views/components/backoffice/modals/"), "name" => ":MODEL_NAME_LOWER:-data.blade.php", "type" => 3],
+            "filters.blade.php" => ["path" => App::resourcePath("/views/components/search-table-filters/"), "name" => ":MODEL_NAME_PLURAL_LOWER:-filters.blade.php", "type" => 3],
         ];
     }
 

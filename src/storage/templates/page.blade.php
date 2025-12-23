@@ -11,8 +11,7 @@
             <x-backoffice.title title="Gestione :MODEL_NAME:" subtitle="Aggiungi e modifica :MODEL_NAME_LOWER:"/>
         
             {{-- Search Table --}}
-            {{-- <x-search-table-filters.:MODEL_NAME_PLURAL_LOWER:-filters /> --}}
-            <x-search-table::table :model="new App\Models\:MODEL_NAME:()" query=""></x-search-table::table>
+            <x-search-table::table :model="new App\Models\:MODEL_NAME:()" query="" showadvancefilters></x-search-table::table>
         </div>
         
         {{-- Footer --}}

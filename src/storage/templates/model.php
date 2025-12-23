@@ -29,6 +29,7 @@ class :MODEL_NAME: extends Model
             // "custom-label" => "Test",
             // "custom-value" => "getNameText", // the name of the model function
             // "custom-filter" => "(SELECT d.name FROM departments d WHERE d.id = department_id)", // sql value to filter by
+            // "advanced-type" => "like",
         ],
     ];
     
