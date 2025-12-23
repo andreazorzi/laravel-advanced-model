@@ -30,6 +30,9 @@ class AdvancedModelServiceProvider extends PackageServiceProvider
 
         // Load package views
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-advanced-model');
+        
+        // Load translations
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'advanced-model');
     }
 
 }
