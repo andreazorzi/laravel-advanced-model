@@ -1,12 +1,12 @@
 <?php
 
-namespace AdvanceModel;
+namespace AdvancedModel;
 
-use AdvanceModel\Commands\CreateModel;
+use AdvancedModel\Commands\CreateModel;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class AdvanceModelServiceProvider extends PackageServiceProvider
+class AdvancedModelServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,8 +16,8 @@ class AdvanceModelServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-advance-model')
-            // ->hasConfigFile('advance-model')
+            ->name('laravel-advanced-model')
+            // ->hasConfigFile('advanced-model')
             ->hasCommands([
                 CreateModel::class
             ])
@@ -29,7 +29,7 @@ class AdvanceModelServiceProvider extends PackageServiceProvider
         parent::boot();
 
         // Load package views
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-advance-model');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-advanced-model');
     }
 
 }

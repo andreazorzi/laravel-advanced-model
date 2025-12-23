@@ -1,6 +1,6 @@
 <?php
 
-namespace AdvanceModel\Commands;
+namespace AdvancedModel\Commands;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateModel extends Command
 {
-    protected $signature = 'advance:create-model {model_name} {--type=} {--force}';
+    protected $signature = 'advanced:create-model {model_name} {--type=} {--force}';
     private $types = ["only-model", "with-controller", "with-page", "complete"];
     private $files;
     private $error = 0;

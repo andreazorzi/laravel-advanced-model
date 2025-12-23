@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\:MODEL_NAME:;
 use Illuminate\Http\Request;
 use App\Models\PasswordReset;
-use AdvanceModel\Traits\AlertResponse;
-use AdvanceModel\Traits\BaseController;
+use AdvancedModel\Traits\AlertResponse;
+use AdvancedModel\Traits\BaseController;
 use SearchTable\Traits\SearchController;
 
 class :MODEL_NAME:Controller extends Controller

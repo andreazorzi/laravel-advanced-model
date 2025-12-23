@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use AdvanceModel\Traits\BaseModel;
+use AdvancedModel\Traits\BaseModel;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use SearchTable\Traits\SearchModel;

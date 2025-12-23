@@ -1,6 +1,6 @@
-# Laravel Advance Model
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/andreazorzi/laravel-advance-model.svg?style=flat-square)](https://packagist.org/packages/andreazorzi/laravel-advance-model)
-[![Total Downloads](https://img.shields.io/packagist/dt/andreazorzi/laravel-advance-model.svg?style=flat-square)](https://packagist.org/packages/andreazorzi/laravel-advance-model)
+# Laravel Advanced Model
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/andreazorzi/laravel-advanced-model.svg?style=flat-square)](https://packagist.org/packages/andreazorzi/laravel-advanced-model)
+[![Total Downloads](https://img.shields.io/packagist/dt/andreazorzi/laravel-advanced-model.svg?style=flat-square)](https://packagist.org/packages/andreazorzi/laravel-advanced-model)
 
 A Laravel package that generates complete CRUD resources with a single command. Creates models, controllers, views, routes, and more with Bootstrap 5 UI and htmx functionality for modern web applications.
 
@@ -25,7 +25,7 @@ This package assumes you have the following assets available in your project:
 ## Installation
 1) ### Install the package:
     ```bash
-    composer require andreazorzi/laravel-advance-model
+    composer require andreazorzi/laravel-advanced-model
     ```
 2) ### Install frontend dependencies:
     ```bash
@@ -69,19 +69,19 @@ Important: The package will automatically add new routes above these placeholder
 ## Usage
 ### Basic Command
 ```bash
-php artisan advance:create-model <ClassName> {--type=<creation_type>} {--force}
+php artisan advanced:create-model <ClassName> {--type=<creation_type>} {--force}
 ```
 
 ### Examples
 ```bash
 # Create a complete User model with all files
-php artisan advance:create-model User --type=complete
+php artisan advanced:create-model User --type=complete
 
 # Create only model and factory
-php artisan advance:create-model Product --type=only-model
+php artisan advanced:create-model Product --type=only-model
 
 # Force overwrite existing files
-php artisan advance:create-model Order --type=complete --force
+php artisan advanced:create-model Order --type=complete --force
 ```
 
 ### Creation Types
@@ -101,7 +101,7 @@ php artisan advance:create-model Order --type=complete --force
 | complete        |   x   |    x    |      x     |     x    |   x  |    x   |  x  |   x   |
 
 ### Generated File Structure
-When you run `php artisan advance:create-model User --type=complete`, the following files are created:
+When you run `php artisan advanced:create-model User --type=complete`, the following files are created:
 ```
 app/
 ├── Models/User.php

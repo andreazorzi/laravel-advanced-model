@@ -1,6 +1,6 @@
 <?php
 
-namespace AdvanceModel\Traits;
+namespace AdvancedModel\Traits;
 
 use Illuminate\Support\Facades\View;
 
@@ -15,7 +15,7 @@ trait AlertResponse
             "duration" => $data["duration"] ?? null
         ];
         
-        return View::make("laravel-advance-model::components.alert", $alert);
+        return View::make("laravel-advanced-model::components.alert", $alert);
     }
     
     public function sweetAlert($data){
@@ -38,6 +38,6 @@ trait AlertResponse
             "oncancel" => $data["oncancel"] ?? null
         ];
         
-        return View::make("laravel-advance-model::components.sweetalert", $alert);
+        return View::make("laravel-advanced-model::components.sweetalert", $alert);
     }
 }

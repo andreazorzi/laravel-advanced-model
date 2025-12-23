@@ -1,6 +1,6 @@
 <?php
 
-namespace AdvanceModel\Traits;
+namespace AdvancedModel\Traits;
 
 use Illuminate\Http\Request;
 
