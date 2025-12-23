@@ -18,7 +18,7 @@
         @isset($:MODEL_NAME_VARIABLE:)
             <div class="col p-0">
                 <button id=":MODEL_NAME_LOWER:-delete" type="button" class="btn btn-danger"
-                    hx-delete="{{route(":MODEL_NAME_PLURAL_LOWER:.destroy", [$:MODEL_NAME_VARIABLE:])}}" hx-target="#request-response" hx-confirm="Eliminare :MODEL_NAME_LOWER: {{$:MODEL_NAME_VARIABLE:->name}}?" hx-params="none">
+                    hx-delete="{{route(":MODEL_NAME_PLURAL_LOWER:.destroy", [$:MODEL_NAME_VARIABLE:])}}" hx-target="#request-response" hx-confirm="{{__("advanced-model::actions.confirm_delete", ["model" => ":MODEL_NAME_LOWER:", "name" => $:MODEL_NAME_VARIABLE:->name])}}" hx-params="none">
                     {{__('advanced-model::actions.delete')}}
                 </button>
             </div>
