@@ -75,14 +75,14 @@ class :MODEL_NAME: extends Model
             $this->save();
         }
         
-        return ["status" => "success", "message" => ":MODEL_NAME: ".($update ? "aggiornato" : "creato"), "model" => $this, "beforeshow" => 'modal.hide(); htmx.trigger("#page", "change");'];
+        return ["status" => "success", "message" => __('advanced-model::actions.'.($update ? "updated" : "created"), ["model" => ":MODEL_NAME:"]), "model" => $this, "beforeshow" => 'modal.hide(); htmx.trigger("#page", "change");'];
     }
     
     public function deleteFromRequest():array{
         $name = $this->name;
         $this->delete();
         
-        return ["status" => "success", "message" => ":MODEL_NAME: $name ".("eliminato"), "beforeshow" => 'modal.hide(); htmx.trigger("#page", "change");'];
+        return ["status" => "success", "message" => __('advanced-model::actions.deleted', ["model" => ":MODEL_NAME:"]), "beforeshow" => 'modal.hide(); htmx.trigger("#page", "change");'];
     }
     
     public static function validate(Request $request, bool $update):array{
