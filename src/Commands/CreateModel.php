@@ -20,6 +20,7 @@ class CreateModel extends Command
         8           => "Route request placeholder are missing, be sure to add them before running this command",
         16          => "Route web placeholder is missing, be sure to add it before running this command",
         32          => "Model table is missing",
+        64          => "Routes config file placeholder is missing, be sure to add it before running this command",
     ];
 
     protected $description = 'This command will create a laravel model';
@@ -144,6 +145,22 @@ class CreateModel extends Command
             }
             else{
                 $this->track_error(16);
+            }
+            
+            $routes_config_file = file_get_contents(App::basePath("config/routes.php"));
+            
+            if(Str::contains($routes_config_file, "// End Pages")){
+                $color = sprintf('#%06X', mt_rand(0, 0xFFFFFF));
+                
+                if(!Str::contains($routes_config_file, "'$model_name_plural_lower' => [")){
+                    $tabs = Str::repeat(" ", 4 * 2);
+                    $routes_config_file = str_replace("// End Pages", "'$model_name_plural_lower' => [\n$tabs    'title' => '$model_name_plural',\n$tabs    'icon' => 'fa-solid fa-file',\n$tabs    'color' => '$color',\n$tabs],\n$tabs// End Pages", $routes_config_file);
+                }
+                
+                file_put_contents(App::basePath("config/routes.php"), $routes_config_file);
+            }
+            else{
+                $this->track_error(64);
             }
         }
         
