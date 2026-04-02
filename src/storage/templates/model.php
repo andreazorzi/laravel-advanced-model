@@ -2,26 +2,22 @@
 
 namespace App\Models;
 
-use AdvancedModel\Traits\BaseModel;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 use SearchTable\Traits\SearchModel;
+use AdvancedModel\Traits\BaseModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Database\Eloquent\Attributes\Table;
+use Illuminate\Database\Eloquent\Attributes\Guarded;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+#[Table(/* name: 'table_name', key: 'code', incrementing: false, */ timestamps: false)]
+#[Guarded(['no_key'])]
 class :MODEL_NAME: extends Model
 {
     use HasFactory, BaseModel, SearchModel;
     
     /** Settings **/
-    // protected $table = 'table_name'; // override default table name [Str::plural(Str::lower(class_basename(self)))]
-    // protected $primaryKey = 'code'; // override default table key [id]
-    // public $incrementing = false; // disable incrementing option (disable it if using $primaryKey)
-    public $timestamps = false;
-    
-    protected $guarded  = ['no_key'];
-    
     protected static $table_fields = [
         "name" => [
             "filter" => true,
@@ -88,9 +84,7 @@ class :MODEL_NAME: extends Model
     
     public static function validate(Request $request, bool $update):array{
         $validator = Validator::make($request->all(), [
-            self::getModelKey() => [$update ? "exists:App\Models\\".class_basename(new self).",".self::getModelKey() : "prohibited"],
-            // self::getModelKey() => ['required', ($update ? "exists" : "unique").":App\Models\\".class_basename(new self).",".self::getModelKey()], // for non incrementing keys
-            "name" => ['required']
+            "name" => ['required'],
         ]);
 
         if ($validator->fails()) {
