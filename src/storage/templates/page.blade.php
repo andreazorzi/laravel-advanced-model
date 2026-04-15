@@ -3,7 +3,7 @@
     {{-- Head --}}
     <x-backoffice.head title=":MODEL_NAME_PLURAL:" />
     
-    <body class="container-fluid" hx-headers='{"X-CSRF-TOKEN": "{{csrf_token()}}"}' hx-ext="ajax-header" hx-target="#request-response">
+    <body class="container-fluid" hx-headers='{"X-CSRF-TOKEN": "{{csrf_token()}}"}' hx-ext="ajax-header" hx-disabled-elt="this" hx-target="#request-response">
         {{-- Header --}}
         <x-backoffice.header />
 
