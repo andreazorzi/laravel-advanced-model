@@ -15,7 +15,7 @@ trait AlertResponse
             "duration" => $data["duration"] ?? null
         ];
         
-        return View::make("laravel-advanced-model::components.alert", $alert);
+        return View::make("laravel-advanced-model::components.alert", $alert)->render();
     }
     
     public function sweetAlert($data){
@@ -38,6 +38,6 @@ trait AlertResponse
             "oncancel" => $data["oncancel"] ?? null
         ];
         
-        return View::make("laravel-advanced-model::components.sweetalert", $alert);
+        return View::make("laravel-advanced-model::components.sweetalert", $alert)->render();
     }
 }
