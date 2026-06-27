@@ -84,7 +84,7 @@ class :MODEL_NAME: extends Model
     
     public static function validate(Request $request, bool $update):array{
         $validator = Validator::make($request->all(), [
-            "name" => ['required'],
+            'name' => ['required'],
         ]);
 
         if ($validator->fails()) {
