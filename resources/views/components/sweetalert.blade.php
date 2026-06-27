@@ -5,6 +5,8 @@
         $status = "error";
     }
     
+    $duration ??= null;
+    
     $alert_data = '
         Swal.fire({
             title: `'.($title ?? "").'`,
@@ -22,6 +24,14 @@
             ' : 'showCancelButton: false,').'
             reverseButtons: true,
             heightAuto: false,
+            '.($duration ? '
+                didOpen: function () {
+                    Swal.showLoading()
+                    setTimeout(function () {
+                        Swal.close()
+                    }, '.$duration.')
+                }
+            ' : '').'
         }).then((result) => {
             if (result.isConfirmed) {
                 '.($onsuccess ?? "").'
