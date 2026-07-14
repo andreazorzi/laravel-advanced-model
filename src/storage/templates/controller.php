@@ -45,6 +45,7 @@ class :MODEL_NAME:Controller extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, :MODEL_NAME: $:MODEL_NAME_VARIABLE:){
+        $request->merge(["_key" => $:MODEL_NAME_VARIABLE:->getKey()]);
         $response = $:MODEL_NAME_VARIABLE:->updateFromRequest($request);
         return $this->alert($response);
     }
