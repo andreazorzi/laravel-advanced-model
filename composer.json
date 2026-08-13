@@ -27,7 +27,7 @@
         "illuminate/support": "^12.0|^13.0",
         "illuminate/console": "^12.0|^13.0",
         "illuminate/http": "^12.0|^13.0",
-        "andreazorzi/search-table": "^1.0",
+        "andreazorzi/search-table": "^2.0",
         "maatwebsite/excel": "^4.0"
     },
     "extra": {

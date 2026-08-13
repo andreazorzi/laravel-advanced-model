@@ -4,25 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d2c9944bdc0e2a95466a625374eefe1",
+    "content-hash": "87afa7303eb03086ec6a654db843f2c2",
     "packages": [
         {
             "name": "andreazorzi/search-table",
-            "version": "1.2.7",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andreazorzi/search-table.git",
-                "reference": "b7d7b5de006f5fb9da677c6aed65dddf8db5a9e4"
+                "reference": "dc409c5d418b3d3e0069f786de69ad6e0b629e6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andreazorzi/search-table/zipball/b7d7b5de006f5fb9da677c6aed65dddf8db5a9e4",
-                "reference": "b7d7b5de006f5fb9da677c6aed65dddf8db5a9e4",
+                "url": "https://api.github.com/repos/andreazorzi/search-table/zipball/dc409c5d418b3d3e0069f786de69ad6e0b629e6a",
+                "reference": "dc409c5d418b3d3e0069f786de69ad6e0b629e6a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/http": "^10.0|^11.0|^12.0|^13.0",
-                "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+                "illuminate/http": "^12.0|^13.0",
+                "illuminate/support": "^12.0|^13.0",
+                "maatwebsite/excel": "^4.0",
                 "php": "^8.2",
                 "spatie/laravel-package-tools": "^1.16"
             },
@@ -62,9 +63,9 @@
             ],
             "support": {
                 "issues": "https://github.com/andreazorzi/search-table/issues",
-                "source": "https://github.com/andreazorzi/search-table/tree/v1.2.7"
+                "source": "https://github.com/andreazorzi/search-table/tree/v2.0.0"
             },
-            "time": "2026-05-21T14:54:33+00:00"
+            "time": "2026-08-13T14:08:56+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
