@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "faab78023e2029c566bde0eb7105df48",
+    "content-hash": "4d2c9944bdc0e2a95466a625374eefe1",
     "packages": [
         {
             "name": "andreazorzi/search-table",
