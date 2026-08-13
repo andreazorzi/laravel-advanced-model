@@ -68,7 +68,7 @@ class :MODEL_NAME:Controller extends Controller
         
         return response()->json([
             "base64" => base64_encode(Excel::raw(new BaseExport($:MODEL_NAME_PLURAL_VARIABLE:), \Maatwebsite\Excel\Excel::XLSX)),
-            "filename" => "exoport-".date("YmdHis").".xlsx",
+            "filename" => "export-".date("YmdHis").".xlsx",
             "mimetype" => "application/vnd.ms-excel",
         ]);
     }
