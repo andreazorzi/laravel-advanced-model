@@ -118,10 +118,10 @@ class CreateModel extends Command
                 if(!Str::contains($route_request_file, "use App\Http\Controllers\\{$model_name}Controller;")){
                     $route_request_file = str_replace("// End Controllers Imports", "use App\Http\Controllers\\{$model_name}Controller;\n// End Controllers Imports", $route_request_file);
                 }
-                if(!Str::contains($route_request_file, "Route::resource('$model_name_plural_lower', {$model_name}Controller::class);")){
+                if(!Str::contains($route_request_file, "Route::advancedResource('$model_name_plural_lower', {$model_name}Controller::class);")){
                     $tabs = Str::repeat(" ", 4 * 3);
                     $route_request_file = str_replace("// End Models Routes", "// $model_name_plural\n".$tabs."// End Models Routes", $route_request_file);
-                    $route_request_file = str_replace("// End Models Routes", "Route::resource('$model_name_plural_lower', {$model_name}Controller::class);\n".$tabs."\n".$tabs."// End Models Routes", $route_request_file);
+                    $route_request_file = str_replace("// End Models Routes", "Route::advancedResource('$model_name_plural_lower', {$model_name}Controller::class);\n".$tabs."\n".$tabs."// End Models Routes", $route_request_file);
                 }
                 
                 file_put_contents(App::basePath("routes/requests.php"), $route_request_file);
