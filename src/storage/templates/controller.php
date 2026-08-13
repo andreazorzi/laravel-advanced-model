@@ -64,7 +64,7 @@ class :MODEL_NAME:Controller extends Controller
      * Export the specified resource from storage.
      */
     public function export(Request $request){
-        $:MODEL_NAME_PLURAL_VARIABLE: = :MODEL_NAME:::filter($filters)->get();
+        $:MODEL_NAME_PLURAL_VARIABLE: = :MODEL_NAME:::filter($request->all())->get();
         
         return response()->json([
             "base64" => base64_encode(Excel::raw(new BaseExport($:MODEL_NAME_PLURAL_VARIABLE:), \Maatwebsite\Excel\Excel::XLSX)),
