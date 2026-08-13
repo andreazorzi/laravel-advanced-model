@@ -99,8 +99,8 @@ class CreateModel extends Command
             
             // Replace placeholders
             $content = str_replace(
-                [":MODEL_NAME:", ":MODEL_NAME_VARIABLE:", ":MODEL_NAME_LOWER:", ":MODEL_NAME_PLURAL:", ":MODEL_NAME_PLURAL_LOWER:"],
-                [$model_name, $model_name_variable, $model_name_lower, $model_name_plural, $model_name_plural_lower],
+                [":MODEL_NAME:", ":MODEL_NAME_VARIABLE:", ":MODEL_NAME_LOWER:", ":MODEL_NAME_PLURAL:", ":MODEL_NAME_PLURAL_LOWER:", ":MODEL_NAME_PLURAL_VARIABLE:"],
+                [$model_name, $model_name_variable, $model_name_lower, $model_name_plural, $model_name_plural_lower, $model_name_plural_variable],
                 $content
             );
             

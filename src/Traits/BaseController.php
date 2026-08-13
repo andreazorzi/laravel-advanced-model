@@ -2,7 +2,6 @@
 
 namespace AdvancedModel\Traits;
 
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\View;
 
 trait BaseController

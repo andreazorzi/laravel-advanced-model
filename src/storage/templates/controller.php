@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\:MODEL_NAME:;
 use Illuminate\Http\Request;
+use AdvancedModel\Exports\BaseExport;
+use Maatwebsite\Excel\Facades\Excel;
 use AdvancedModel\Traits\AlertResponse;
 use AdvancedModel\Traits\BaseController;
 use SearchTable\Traits\SearchController;
@@ -56,5 +58,18 @@ class :MODEL_NAME:Controller extends Controller
     public function destroy(Request $request, :MODEL_NAME: $:MODEL_NAME_VARIABLE:){
         $response = $:MODEL_NAME_VARIABLE:->deleteFromRequest();
         return $this->alert($response);
+    }
+    
+    /**
+     * Export the specified resource from storage.
+     */
+    public function export(Request $request){
+        $:MODEL_NAME_PLURAL_VARIABLE: = :MODEL_NAME:::filter($filters)->get();
+        
+        return response()->json([
+            "base64" => base64_encode(Excel::raw(new BaseExport($:MODEL_NAME_PLURAL_VARIABLE:), \Maatwebsite\Excel\Excel::XLSX)),
+            "filename" => "exoport-".date("YmdHis").".xlsx",
+            "mimetype" => "application/vnd.ms-excel",
+        ]);
     }
 }
